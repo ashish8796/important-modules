@@ -4,7 +4,7 @@ def doNothing():
     print('ok ok I won\'t...')
 
 root = Tk()
-
+#***Main Menu****
 menu = Menu(root)
 root.config(menu=menu)
 
@@ -18,6 +18,24 @@ subMenu.add_command(label="Exit", command=doNothing)
 editMenu = Menu(menu)
 menu.add_cascade(label="Edit", menu=editMenu)
 editMenu.add_command(label='Redo', command=doNothing)
+
+#***The Toolbar***
+
+toolbar = Frame(root, bg="blue")
+
+insertButt = Button(toolbar, text="Insert Image", command=doNothing)
+insertButt.pack(side=LEFT, padx=2, pady=2)
+printButt = Button(toolbar, text="print", command=doNothing)
+printButt.pack(side=LEFT, padx=2, pady=2)
+
+toolbar.pack(side=TOP, fill=X)
+
+#***Status Bar***
+
+status = Label(root, text="Preparing to do nothing....", bd=1, relief=SUNKEN, anchor=W)
+status.pack(side=BOTTOM, fill=X)
+
+
 
 
 root.mainloop()
