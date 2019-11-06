@@ -55,3 +55,51 @@ d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
    'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
 df = pd.DataFrame(d)
 print(df)
+
+#Column Selection
+print(df['one'])
+
+#Column Addition
+# Adding a new column to an existing DataFrame object with column label by passing new series
+print("Adding a new column by passing as Series:")
+df['three'] = pd.Series([10, 20, 30], index=['a','b','c'])
+print(df)
+
+print("Adding a new column to an existing DataFrame using the existing columns in dataFrame:")
+df['four'] = df['one'] + df['three']
+print(df)
+
+#Column Deletion
+# using del function
+print("Deleting the first column using DEL function:")
+del df['one']
+print(df)
+
+# using pop function
+print ("Deleting another column using POP function:")
+df.pop('two')
+print(df)
+
+#Row Selection, Addition, and Deletion
+#Selection by Label
+print(df.loc['b'])
+
+#Selection by integer location
+print(df.iloc[2])
+
+#Slice Rows
+print(df[2:4])
+
+#Addition of Rows
+df2 = pd.DataFrame([[5, 6], [7, 8]], columns = ['a','b'])
+df = df.append(df2)
+print(df)
+
+#Deletion of Rows
+'''
+Use index label to delete or drop rows from a DataFrame. If label is duplicated, 
+then multiple rows will be dropped.
+'''
+# Drop rows with label 0
+df = df.drop(0)
+print(df)
