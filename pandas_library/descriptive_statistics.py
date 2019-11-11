@@ -11,3 +11,30 @@ d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack',
 #Create a DataFrame
 df = pd.DataFrame(d)
 print(df.head())
+
+#Sum
+print(df.sum())
+print(df.sum(1))
+
+#Mean
+print(df.mean())
+
+#Std
+#Returns the Bressel standard deviation of the numerical columns.
+print(df.std())
+
+#Describe
+print(df.median())
+print(df.mode())
+print(df.min())
+print(df.max())
+print(df.count())
+# print(df.abs())
+print(df.prod())
+print(df.cumsum())
+# print(df.cumprod())
+
+#Summarizing Data
+print(df.describe())
+print(df.describe(include=['object']))
+print(df.describe(include='all'))
